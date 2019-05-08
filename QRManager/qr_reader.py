@@ -1,9 +1,5 @@
-from cv2 import QRCodeDetector
+from pyzbar.pyzbar import decode
 
 
 def read_qr_code(input_image):
-    qr_decoder = QRCodeDetector()
-    data = qr_decoder.detectAndDecode(input_image)[0]
-    if data:
-        return data
-    return None
+    return decode(input_image)[0][0].decode("utf-8")
