@@ -28,20 +28,20 @@ def demo_user_code_after_vision_opened(bebop_vision, args):
     #bebop_vision.start_video_buffering()
 
     # takeoff
-    bebop.safe_takeoff(5)
+    # bebop.safe_takeoff(5)
 
     # skipping actually flying for safety purposes indoors - if you want
     # different pictures, move the bebop around by hand
     print("Fly me around by hand!")
-    bebop.smart_sleep(5)
+    bebop.smart_sleep(10)
 
     if bebop_vision.vision_running:
-        print("Moving the camera using velocity")
-        bebop.pan_tilt_camera_velocity(pan_velocity=0, tilt_velocity=-2, duration=4)
-        bebop.smart_sleep(5)
+        #print("Moving the camera using velocity")
+        #bebop.pan_tilt_camera_velocity(pan_velocity=0, tilt_velocity=-2, duration=4)
+        #bebop.smart_sleep(5)
 
         # land
-        bebop.safe_land(5)
+        #bebop.safe_land(5)
 
         print("Finishing demo and stopping vision")
         bebop_vision.close_video()
@@ -51,8 +51,8 @@ def demo_user_code_after_vision_opened(bebop_vision, args):
     bebop.disconnect()
 
 if __name__ == "__main__":
-    BEBOP = Bebop(drone_type='Bebop')
-    SUCCESS = BEBOP.connect(5)
+    BEBOP = Bebop(drone_type="Bebop")
+    SUCCESS = BEBOP.connect(20)
     if SUCCESS:
         BEBOP_VISION = DroneVisionGUI(BEBOP,
                                       is_bebop=True,

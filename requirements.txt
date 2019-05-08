@@ -5,3 +5,4 @@ vlc
 ffmpeg
 pyqt5
 pyzbar
+zeroconf
