@@ -1,8 +1,6 @@
 opencv-python
-opencv-contrib-python
 pyparrot
 pylint
 vlc
 ffmpeg
 pyqt5
-zbar
