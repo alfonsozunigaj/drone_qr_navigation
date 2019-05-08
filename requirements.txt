@@ -5,3 +5,4 @@ pylint
 vlc
 ffmpeg
 pyqt5
+zbar
