@@ -13,11 +13,11 @@ def demo_user_code_after_vision_opened(bebop_vision, args):
             if instruction is not None:
                 if instruction == "take_off":
                     bebop.safe_takeoff(5)
-                    bebop.smart_sleep(5)
-                elif instruction == "landing":
+                elif instruction == "land":
                     bebop.safe_land(5)
                     bebop_vision.close_video()
     bebop.disconnect()
+
 
 if __name__ == "__main__":
     BEBOP = Bebop(drone_type="Bebop")
@@ -26,7 +26,7 @@ if __name__ == "__main__":
         BEBOP_VISION = DroneVisionGUI(BEBOP,
                                       is_bebop=True,
                                       user_code_to_run=demo_user_code_after_vision_opened,
-                                      user_args=(BEBOP, ))
+                                      user_args=(BEBOP,))
         BEBOP_VISION.open_video()
 
     else:
