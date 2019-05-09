@@ -1,6 +1,17 @@
 import cv2
 from pyparrot.Bebop import Bebop
 from pyparrot.DroneVisionGUI import DroneVisionGUI
+#from qr_reader import read_qr_code
+
+from pyzbar.pyzbar import decode
+
+
+def read_qr_code(input_image):
+    decoded = decode(input_image)
+    print(decoded)
+    if len(decoded) is not 0:
+        return decoded[0][0].decode("utf-8")
+    return None
 
 
 IS_ALIVE = False
@@ -11,13 +22,18 @@ class UserVision:
         self.index = 0
         self.vision = vision
 
-    def save_pictures(self):
+    def save_pictures(self, args):
         #print("saving picture")
+        BEBOP = args[0]
         img = self.vision.get_latest_valid_picture()
-        if img:
-            filename = "test_image_%06d.png" % self.index
-            cv2.imwrite(filename, img)
-            self.index += 1
+        
+        if img is not None:
+            # filename = "test_image_%06d.png" % self.index
+            if read_qr_code(img) is not None:
+                BEBOP.safe_takeoff(5)
+                BEBOP.smart_sleep(5)
+                BEBOP.safe_land(5)
+            exit()
 
 
 def demo_user_code_after_vision_opened(bebop_vision, args):
@@ -36,7 +52,7 @@ def demo_user_code_after_vision_opened(bebop_vision, args):
     bebop.smart_sleep(10)
 
     if bebop_vision.vision_running:
-        #print("Moving the camera using velocity")
+        print("Moving the camera using velocity")
         #bebop.pan_tilt_camera_velocity(pan_velocity=0, tilt_velocity=-2, duration=4)
         #bebop.smart_sleep(5)
 
@@ -59,7 +75,7 @@ if __name__ == "__main__":
                                       user_code_to_run=demo_user_code_after_vision_opened,
                                       user_args=(BEBOP, ))
         USER_VISION = UserVision(BEBOP_VISION)
-        BEBOP_VISION.set_user_callback_function(USER_VISION.save_pictures, user_callback_args=None)
+        BEBOP_VISION.set_user_callback_function(USER_VISION.save_pictures, user_callback_args=(BEBOP,))
         BEBOP_VISION.open_video()
 
     else:
