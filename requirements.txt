@@ -6,3 +6,4 @@ ffmpeg
 pyqt5
 pyzbar
 zeroconf
+csv

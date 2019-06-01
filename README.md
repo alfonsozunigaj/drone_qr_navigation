@@ -9,3 +9,14 @@ pip install -r requirements.txt
 ```
 Here we have created a virtual python environment called "drone", where we've installed all the required libraries needed for the project to run.
 
+---
+
+## Instructions file
+
+Edit the "instructions.csv" file located in InputFileManager to specify the instructions that the drone should execute when reading a specific QR code. The format of each row inside the file is:
+```
+qr_letter_index,dx,dy,dz,dradians
+```
+where qr_letter_index is a single capital letter, and the following four elements should be integers. For more information on how this data will be used, read about the **move_relative** function [here](https://pyparrot.readthedocs.io/en/latest/bebopcommands.html#flying).
+
+
