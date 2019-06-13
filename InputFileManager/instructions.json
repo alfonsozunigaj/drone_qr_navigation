@@ -1,0 +1,66 @@
+{
+  "A": [
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    },
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    }
+  ],
+  "B": [
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    },
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    }
+  ],
+  "C": [
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    },
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    }
+  ],
+  "D": [
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    },
+    {
+      "roll": 0,
+      "pitch": 30,
+      "yaw": 0,
+      "v_move": 0,
+      "duration": 1
+    }
+  ]
+}
