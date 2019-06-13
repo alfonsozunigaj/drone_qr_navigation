@@ -2,15 +2,8 @@
   "A": [
     {
       "roll": 0,
-      "pitch": 30,
-      "yaw": 0,
-      "v_move": 0,
-      "duration": 1
-    },
-    {
-      "roll": 0,
-      "pitch": 30,
-      "yaw": 0,
+      "pitch": 0,
+      "yaw": 50,
       "v_move": 0,
       "duration": 1
     }
